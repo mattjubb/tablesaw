@@ -909,9 +909,9 @@ public class Table extends Relation implements Iterable<Row> {
       List<String> aggregatedColumnNames,
       AggregateFunction<?, ?> aggregateFunction) {
         return pivot(
-            groupingColumnNames.stream().map(this::categoricalColumn).collect(Collectors.toList()),
+            groupingColumnNames.stream().map(this::categoricalColumn).collect(toList()),
             categoricalColumn(pivotColumnName),
-            aggregatedColumnNames.stream().map(this::numberColumn).collect(Collectors.toList()),
+            aggregatedColumnNames.stream().map(this::numberColumn).collect(toList()),
             aggregateFunction);
   }
 
